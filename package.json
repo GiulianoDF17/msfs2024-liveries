@@ -1,0 +1,51 @@
+{
+  "name": "livery-forge",
+  "productName": "Livery Forge",
+  "version": "1.0.0",
+  "description": "Paint, package, test and publish Microsoft Flight Simulator 2024 liveries in one app.",
+  "main": "main.js",
+  "author": "Livery Forge",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/syntax-check.js",
+    "dist": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.liveryforge.app",
+    "productName": "Livery Forge",
+    "files": [
+      "main.js",
+      "preload.js",
+      "lib/**/*",
+      "src/**/*",
+      "config/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "ag-psd": "^26.0.0",
+    "archiver": "^7.0.1",
+    "extract-zip": "^2.0.1"
+  },
+  "devDependencies": {
+    "electron": "^44.9.3",
+    "electron-builder": "^26.18.0"
+  }
+}
