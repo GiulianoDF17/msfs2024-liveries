@@ -1,0 +1,5 @@
+{
+  "_help": "Paste your Supabase Project URL and anon (public) key here, or enter them in the app under Settings > Cloud server. See README section 'Set up the cloud server'.",
+  "url": "",
+  "anonKey": ""
+}
